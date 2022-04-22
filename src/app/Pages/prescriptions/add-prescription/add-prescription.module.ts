@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListPrescriptionsPageRoutingModule } from './list-prescriptions-routing.module';
+import { AddPrescriptionPageRoutingModule } from './add-prescription-routing.module';
 
-import { ListPrescriptionsPage } from './list-prescriptions.page';
+import { AddPrescriptionPage } from './add-prescription.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListPrescriptionsPageRoutingModule,
+    AddPrescriptionPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [ListPrescriptionsPage]
+  declarations: [AddPrescriptionPage]
 })
-export class ListPrescriptionsPageModule {}
+export class AddPrescriptionPageModule {}

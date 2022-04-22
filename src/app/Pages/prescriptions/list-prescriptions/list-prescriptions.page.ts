@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prescription } from 'src/app/Model/Prescription';
 import { PrescriptionService } from 'src/app/Services/prescription.service';
+import { ModalController } from '@ionic/angular';
+import { AddPrescriptionPage } from '../add-prescription/add-prescription.page';
 
 @Component({
   selector: 'app-list-prescriptions',
@@ -12,48 +14,23 @@ export class ListPrescriptionsPage implements OnInit {
 
   prescriptions: Prescription[] = [];
 
-  constructor(private router: Router, private prescriptionService: PrescriptionService) { }
+  constructor(private router: Router, private prescriptionService: PrescriptionService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.prescriptions = this.prescriptionService.prescriptions;
+    console.log(this.prescriptions);
+  }
+
+  async onAdd() {
+    const modal = await this.modalController.create({
+      component: AddPrescriptionPage,
+    });
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+    if (data)
+      this.prescriptions.push(data);
+      this.prescriptionService.prescriptions=this.prescriptions;
+      console.log(this.prescriptionService.prescriptions)
   }
 
 }
-
-
-// destinatarios: Destinatario[] = [];
-
-// api: String;
-
-// constructor(private router: Router, private destinatarioServices: DestinatarioService, private modalController: ModalController) {
-
-// }
-
-// ngOnInit() {
-//   this.destinatarios = this.destinatarioServices.destinatarios;
-//   if (this.destinatarios == undefined) {
-//     this.destinatarioServices.getDestinatarios().subscribe(desti => {
-//       this.destinatarios = desti;
-//     })
-//   }
-// }
-//  ionViewDidEnter() {
-//      this.destinatarios = this.destinatarioServices.destinatarios;
-//  }
-
-// onDetail(destinatarioActual: Destinatario) {
-//   this.destinatarioServices.destinatarioActual=destinatarioActual;
-//   this.router.navigate([`/usr-tab/lista-destinatarios/${destinatarioActual.id}`]);
-// }
-
-// async onAdd() {
-//   const modal = await this.modalController.create({
-//     component: UsrAddDestinatariosPage,
-//   });
-//   await modal.present();
-//   const { data } = await modal.onDidDismiss();
-//   if (data)
-//     this.destinatarios.push(data);
-//     this.destinatarioServices.destinatarios=this.destinatarios;
-
-// }
