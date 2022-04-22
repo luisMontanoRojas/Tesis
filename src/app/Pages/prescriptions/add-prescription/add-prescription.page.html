@@ -12,7 +12,7 @@
 <ion-content>
   <ion-list lines="full" class="ion-no-margin">
     <ion-list-header lines="full">
-      <ion-label> Receta </ion-label>
+      <ion-title> Receta </ion-title>
     </ion-list-header>
       
     <form [formGroup]="formGruop">
@@ -31,7 +31,7 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-button color="success" expand="block" [disabled]="formGruop.invalid" type="submit" (click)="onCreate()" >Agregar</ion-button>
+    <ion-button color="primary" expand="block" [disabled]="formGruop.invalid" type="submit" (click)="onCreate()" >Agregar</ion-button>
     <ion-button color="danger" expand="block" (click)="closeModal()" >Cancelar</ion-button>
   </ion-toolbar>
 </ion-footer>

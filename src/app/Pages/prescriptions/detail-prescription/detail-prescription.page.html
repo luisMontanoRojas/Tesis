@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle Receta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-title> Receta de: {{prescription.illness}} </ion-title>
+    </ion-list-header>
+      <ion-item>
+        <ion-label position="stacked">Doctor asignado: {{prescription.doctor}} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Fecha asignada: {{datePrescription}} </ion-label>
+      </ion-item>
+    
+
+  </ion-list>
+</ion-content>

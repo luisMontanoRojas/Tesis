@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let prescription of prescriptions">
+    <ion-item *ngFor="let prescription of prescriptions" (click)="onDetail(prescription)">
         <ion-icon name="document" slot="start"></ion-icon>
         <ion-label>{{prescription.illness}}</ion-label>
     </ion-item>
@@ -14,6 +14,6 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block" (click)="onAdd()">Agregar Receta</ion-button>
+    <ion-button color="primary" expand="block" (click)="onAdd()">Agregar Receta</ion-button>
   </ion-toolbar>
 </ion-footer>

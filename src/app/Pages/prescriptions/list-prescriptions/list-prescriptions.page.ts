@@ -21,6 +21,11 @@ export class ListPrescriptionsPage implements OnInit {
     console.log(this.prescriptions);
   }
 
+  onDetail(prescription: Prescription) {
+    this.prescriptionService.actualPrescription=prescription;
+    this.router.navigate([`/home/list-prescriptions/${prescription.id}`]);
+  }
+
   async onAdd() {
     const modal = await this.modalController.create({
       component: AddPrescriptionPage,
