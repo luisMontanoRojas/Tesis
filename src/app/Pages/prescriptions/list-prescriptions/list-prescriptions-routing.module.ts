@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ListPrescriptionsPage
+  },
+  {
+    path: 'add-prescription',
+    loadChildren: () => import('../add-prescription/add-prescription.module').then( m => m.AddPrescriptionPageModule)
   }
 ];
 

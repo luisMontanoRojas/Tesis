@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Receta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label> Receta </ion-label>
+    </ion-list-header>
+      
+    <form [formGroup]="formGruop">
+      <ion-item>
+        <ion-label position="stacked">Dolencia a Tratar</ion-label>
+        <ion-input type="text" placeholder="Enfermedad/freactura/dolencia." formControlName="prescriptionIllness"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Doctor asignado:</ion-label>
+        <ion-input type="text" placeholder="Dr. Juan." formControlName="prescriptionDoctor"></ion-input>
+      </ion-item>
+    </form>
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="success" expand="block" [disabled]="formGruop.invalid" type="submit" (click)="onCreate()" >Agregar</ion-button>
+    <ion-button color="danger" expand="block" (click)="closeModal()" >Cancelar</ion-button>
+  </ion-toolbar>
+</ion-footer>

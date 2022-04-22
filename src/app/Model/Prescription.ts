@@ -1,7 +1,6 @@
 export class Prescription{
     id:number;
-    name:string;
+    illness:string;
     doctor:string;
     date:Date;
-    Illness:string;
 }
