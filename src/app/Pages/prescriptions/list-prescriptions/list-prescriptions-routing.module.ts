@@ -11,7 +11,12 @@ const routes: Routes = [
   {
     path: 'add-prescription',
     loadChildren: () => import('../add-prescription/add-prescription.module').then( m => m.AddPrescriptionPageModule)
-  }
+  },
+  {
+    path: ':idPrescription',
+    loadChildren: () => import('../detail-prescription/detail-prescription.module').then( m => m.DetailPrescriptionPageModule)
+  },
+  
 ];
 
 @NgModule({

@@ -13,33 +13,34 @@ const httpOptions = {
 })
 export class PrescriptionService {
 
-  // prescriptions: [];
   prescriptions: Prescription[] = [
     {
       'id': 1,
       'illness': 'Dolor de cabeza',
-      'doctor': 'string',
+      'doctor': 'Dr. Juan',
       'date': new Date(),
     },
     {
       'id': 2,
       'illness': 'Lumbago',
-      'doctor': 'string',
+      'doctor': 'Dr. Pedro',
       'date': new Date(),
     },
     {
       'id': 3,
       'illness': 'Fractura de muñeca',
-      'doctor': 'string',
+      'doctor': 'Dr. Felipe',
       'date': new Date(),
     },
     {
       'id': 4,
       'illness': 'Migraña',
-      'doctor': 'string',
+      'doctor': 'Dr. Rodrigo',
       'date': new Date(),
     }
   ];
+
+  actualPrescription = new Prescription();
 
   constructor() { }
 
