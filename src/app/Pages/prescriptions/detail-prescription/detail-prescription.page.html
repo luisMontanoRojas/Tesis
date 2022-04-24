@@ -4,14 +4,25 @@
       <ion-back-button color="primary"></ion-back-button>
     </ion-buttons>
     <ion-title>Detalle Receta</ion-title>
+    
+    <ion-buttons slot="end">
+      <ion-button id="nested-button">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical" id="nested-button"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="full" class="ion-no-margin">
+    
     <ion-list-header lines="full">
-      <ion-title> Receta de: {{prescription.illness}} </ion-title>
+      <ion-title> 
+        <ion-label>Receta de: {{prescription.illness}}</ion-label>
+      </ion-title>
     </ion-list-header>
+
       <ion-item>
         <ion-label position="stacked">Doctor asignado: {{prescription.doctor}} </ion-label>
       </ion-item>
@@ -19,6 +30,21 @@
         <ion-label position="stacked">Fecha asignada: {{datePrescription}} </ion-label>
       </ion-item>
     
-
   </ion-list>
+  
 </ion-content>
+
+<ion-popover trigger="nested-button" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false" (click)="presentAlertConfirm(prescription)">
+          <ion-label>Eliminar</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false">
+          <ion-label>Option 2</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>

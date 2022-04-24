@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prescription } from 'src/app/Model/Prescription';
 import { PrescriptionService } from 'src/app/Services/prescription.service';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { AddPrescriptionPage } from '../add-prescription/add-prescription.page';
 
 @Component({
@@ -14,7 +14,7 @@ export class ListPrescriptionsPage implements OnInit {
 
   prescriptions: Prescription[] = [];
 
-  constructor(private router: Router, private prescriptionService: PrescriptionService, private modalController: ModalController) { }
+  constructor(public alertController: AlertController, private router: Router, private prescriptionService: PrescriptionService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.prescriptions = this.prescriptionService.prescriptions;
@@ -36,6 +36,31 @@ export class ListPrescriptionsPage implements OnInit {
       this.prescriptions.push(data);
       this.prescriptionService.prescriptions=this.prescriptions;
       console.log(this.prescriptionService.prescriptions)
+  }
+
+  async presentAlertConfirm(prescription) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmar eliminacion',
+      message: '<strong>Estas seguro que deseas eliminar?</strong>',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Confirmar',
+          handler: () => {
+            this.prescriptionService.prescriptions.splice( this.prescriptionService.prescriptions.indexOf(prescription), 1 );
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

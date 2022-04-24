@@ -55,7 +55,8 @@ export class PrescriptionService {
   editPrescription(prescriptionToUpdated: Prescription) {
   }
 
-  deletePrescription(id) {
+  deletePrescription(prescriptionToDelete: Prescription) {
+    this.prescriptions.splice( this.prescriptions.indexOf(prescriptionToDelete), 1 );
   }
 
   addPrescription(prescriptionToAdd: Prescription){
