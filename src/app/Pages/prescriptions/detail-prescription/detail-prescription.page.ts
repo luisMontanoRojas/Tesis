@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Prescription } from 'src/app/Model/Prescription';
 import { PrescriptionService } from 'src/app/Services/prescription.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-detail-prescription',
@@ -14,26 +15,36 @@ export class DetailPrescriptionPage implements OnInit {
   prescription: Prescription = new Prescription;
   datePrescription: string;
 
-  constructor(private prescriptionServices: PrescriptionService, private datePipe: DatePipe) { }
+  constructor(public alertController: AlertController, private router: Router, private prescriptionServices: PrescriptionService, private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.prescription = this.prescriptionServices.actualPrescription;
     this.datePrescription = this.datePipe.transform(this.prescription.date,"yyyy-MM-dd");
   }
 
-  // destinatario: Destinatario = new Destinatario;
-  // constructor(public alertController: AlertController, private modalController: ModalController, private destinatarioServices: DestinatarioService,
-  //   private route: ActivatedRoute, private router: Router) { }
+  async presentAlertConfirm(prescription) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirmar eliminacion',
+      message: '<strong>Estas seguro que deseas eliminar?</strong>',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Confirmar',
+          handler: () => {
+            this.prescriptionServices.prescriptions.splice( this.prescriptionServices.prescriptions.indexOf(prescription), 1 );
+            this.router.navigate([`/home/list-prescriptions`]);
+          }
+        }
+      ]
+    });
 
-  // ngOnInit() {
-  //   this.destinatario = this.destinatarioServices.destinatarioActual;
-  //   if (this.destinatario.id == undefined) {
-  //     const destinatarioId = this.route.snapshot.paramMap.get("idDestinatario");
-  //     this.destinatarioServices.getDestinatarioPorId(destinatarioId).subscribe(destinatario => {
-  //       this.destinatario = destinatario;
-  //     })
-  //   }
-
-  // }
-
+    await alert.present();
+  }
 }
