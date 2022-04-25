@@ -3,6 +3,6 @@ export class Medicine{
     idPrescription: number;
     name: string;
     cant: number;
-    rango: Date;
+    range: Date;
     alarms: Date[];
 }
