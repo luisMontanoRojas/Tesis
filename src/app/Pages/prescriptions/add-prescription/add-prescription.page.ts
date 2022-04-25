@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { ModalController } from '@ionic/angular';
 import { Prescription } from 'src/app/Model/Prescription';
 import { PrescriptionService } from 'src/app/Services/prescription.service';
+import { ToastService } from 'src/app/Services/toast.service';
 
 @Component({
   selector: 'app-add-prescription',
@@ -19,7 +20,8 @@ export class AddPrescriptionPage implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private modalController: ModalController, 
-    private prescriptionService: PrescriptionService
+    private prescriptionService: PrescriptionService,
+    public toastService: ToastService
     ) { 
       
       this.formGruop = fb.group({
@@ -41,6 +43,7 @@ export class AddPrescriptionPage implements OnInit {
     try {
       this.prescriptionService.addPrescription(this.precriptionAdd);
       this.modalController.dismiss();
+      this.toastService.presentToast('Receta creada con exito.');
     } catch(e) {
       console.log(e); 
     }

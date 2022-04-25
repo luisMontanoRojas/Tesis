@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Receta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-title> Receta: {{prescriptionEdit.illness}} </ion-title>
+    </ion-list-header>
+  </ion-list>
+
+  <form [formGroup]="formGruop">
+    <ion-item>
+      <ion-label position="stacked">Dolencia a Tratar</ion-label>
+      <ion-input type="text" formControlName="prescriptionIllness" [(ngModel)]="prescriptionEdit.illness" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Doctor asignado:</ion-label>
+      <ion-input type="text" formControlName="prescriptionDoctor" [(ngModel)]="prescriptionEdit.doctor" clearInput></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="primary" expand="block" [disabled]="formGruop.invalid" type="submit" (click)="onEdit()" >Editar</ion-button>
+    <ion-button color="danger" expand="block" (click)="closeModal()" >Cancelar</ion-button>
+  </ion-toolbar>
+</ion-footer>
