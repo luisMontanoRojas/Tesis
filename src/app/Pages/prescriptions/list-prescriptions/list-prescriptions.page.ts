@@ -4,8 +4,8 @@ import { Prescription } from 'src/app/Model/Prescription';
 import { PrescriptionService } from 'src/app/Services/prescription.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { AddPrescriptionPage } from '../add-prescription/add-prescription.page';
-import { EditPrescriptionPage } from '../edit-prescription/edit-prescription.page';
 import { ToastService } from 'src/app/Services/toast.service';
+import { EditPrescriptionPage } from '../edit-prescription/edit-prescription.page';
 
 @Component({
   selector: 'app-list-prescriptions',
@@ -24,7 +24,6 @@ export class ListPrescriptionsPage implements OnInit {
 
   ngOnInit() {
     this.prescriptions = this.prescriptionService.prescriptions;
-    console.log(this.prescriptions);
   }
 
   onDetail(prescription: Prescription) {
