@@ -7,12 +7,13 @@
 <ion-content>
   <ion-list>
     
-    <ion-item-sliding *ngFor="let prescription of prescriptions">
+    <ion-item-sliding *ngFor="let prescription of prescriptions.slice().reverse()">
       <ion-item (click)="onDetail(prescription)">
         <ion-icon name="document" slot="start"></ion-icon>
         <ion-label>{{prescription.illness}}</ion-label>
       </ion-item>
       <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="onEdit(prescription)">Editar</ion-item-option>
         <ion-item-option color="danger" (click)="presentAlertConfirm(prescription)">Eliminar</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
