@@ -3,6 +3,10 @@ export class Medicine{
     idPrescription: number;
     name: string;
     cant: number;
-    range: Date;
+    rangeWeek: number;
+    rangeDay: number;
+    rangeHour: number;
+    rangeMinute: number;
+    rangeSecond: number;
     alarms: Date[];
 }

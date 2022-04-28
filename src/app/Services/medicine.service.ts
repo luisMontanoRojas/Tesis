@@ -19,7 +19,11 @@ export class MedicineService {
       idPrescription: 1,
       name: "paracetamol",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 1,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -27,7 +31,11 @@ export class MedicineService {
       idPrescription: 1,
       name: "ketamina",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 1,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -35,7 +43,11 @@ export class MedicineService {
       idPrescription: 1,
       name: "óxido nitroso",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 1,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -43,7 +55,11 @@ export class MedicineService {
       idPrescription: 2,
       name: "oxígeno",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 1,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -51,7 +67,11 @@ export class MedicineService {
       idPrescription: 2,
       name: "tiopental",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 1,
       alarms: []
     },
     {
@@ -59,7 +79,11 @@ export class MedicineService {
       idPrescription: 3,
       name: "bupivacaína",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 1,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -67,7 +91,11 @@ export class MedicineService {
       idPrescription: 3,
       name: "lidocaína",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 1,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -75,7 +103,11 @@ export class MedicineService {
       idPrescription: 3,
       name: "efedrina",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 1,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -83,7 +115,11 @@ export class MedicineService {
       idPrescription: 3,
       name: "atropina",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 1,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -91,7 +127,11 @@ export class MedicineService {
       idPrescription: 4,
       name: "diazepam",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 1,
       alarms: []
     },
     {
@@ -99,7 +139,11 @@ export class MedicineService {
       idPrescription: 4,
       name: "morfina",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 1,
+      rangeDay: 0,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -107,7 +151,11 @@ export class MedicineService {
       idPrescription: 4,
       name: "prometazina",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 1,
+      rangeHour: 0,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     },
     {
@@ -115,7 +163,11 @@ export class MedicineService {
       idPrescription: 4,
       name: "ibuprofeno",
       cant: 2,
-      range: new Date(0,0,0,8,0,0),
+      rangeWeek: 0,
+      rangeDay: 0,
+      rangeHour: 1,
+      rangeMinute: 0,
+      rangeSecond: 0,
       alarms: []
     }
   ];
