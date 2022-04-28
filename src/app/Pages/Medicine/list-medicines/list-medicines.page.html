@@ -7,7 +7,7 @@
   </ion-list-header>
 
   <ion-item-sliding *ngFor="let medicine of medicines">
-    <ion-item>
+    <ion-item (click)="onDetail(medicine)">
       <ion-icon name="medkit" slot="start"></ion-icon>
       <ion-label>{{medicine.name}}</ion-label>
     </ion-item>
