@@ -26,4 +26,10 @@ export class ListMedicinesPage implements OnInit {
     console.log(this.medicines)
   }
 
+  onDetail(medicine){
+    this.medicineService.actualMedicine = medicine;
+    this.router.navigate([`/home/list-prescriptions/${medicine.idPrescription}/medicine/${medicine.id}`]);
+    console.log("asdasd")
+  }
+
 }

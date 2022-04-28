@@ -17,7 +17,7 @@ export class MedicineService {
     {
       id: 1,
       idPrescription: 1,
-      name: "paracetamol",
+      name: "Paracetamol",
       cant: 2,
       rangeWeek: 1,
       rangeDay: 0,
@@ -29,7 +29,7 @@ export class MedicineService {
     {
       id: 2,
       idPrescription: 1,
-      name: "ketamina",
+      name: "Ketamina",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 1,
@@ -41,7 +41,7 @@ export class MedicineService {
     {
       id: 3,
       idPrescription: 1,
-      name: "óxido nitroso",
+      name: "Oxido nitroso",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
@@ -53,7 +53,7 @@ export class MedicineService {
     {
       id: 4,
       idPrescription: 2,
-      name: "oxígeno",
+      name: "Oxígeno",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
@@ -65,7 +65,7 @@ export class MedicineService {
     {
       id: 5,
       idPrescription: 2,
-      name: "tiopental",
+      name: "Tiopental",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
@@ -77,7 +77,7 @@ export class MedicineService {
     {
       id: 6,
       idPrescription: 3,
-      name: "bupivacaína",
+      name: "Bupivacaína",
       cant: 2,
       rangeWeek: 1,
       rangeDay: 0,
@@ -89,7 +89,7 @@ export class MedicineService {
     {
       id: 7,
       idPrescription: 3,
-      name: "lidocaína",
+      name: "Lidocaína",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 1,
@@ -101,7 +101,7 @@ export class MedicineService {
     {
       id: 8,
       idPrescription: 3,
-      name: "efedrina",
+      name: "Efedrina",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
@@ -113,7 +113,7 @@ export class MedicineService {
     {
       id: 9,
       idPrescription: 3,
-      name: "atropina",
+      name: "Atropina",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
@@ -125,11 +125,11 @@ export class MedicineService {
     {
       id: 10,
       idPrescription: 4,
-      name: "diazepam",
+      name: "Diazepam",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,
-      rangeHour: 0,
+      rangeHour: 10,
       rangeMinute: 0,
       rangeSecond: 1,
       alarms: []
@@ -137,7 +137,7 @@ export class MedicineService {
     {
       id: 11,
       idPrescription: 4,
-      name: "morfina",
+      name: "Morfina",
       cant: 2,
       rangeWeek: 1,
       rangeDay: 0,
@@ -149,7 +149,7 @@ export class MedicineService {
     {
       id: 12,
       idPrescription: 4,
-      name: "prometazina",
+      name: "Prometazina",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 1,
@@ -161,7 +161,7 @@ export class MedicineService {
     {
       id: 13,
       idPrescription: 4,
-      name: "ibuprofeno",
+      name: "Ibuprofeno",
       cant: 2,
       rangeWeek: 0,
       rangeDay: 0,

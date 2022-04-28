@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle del Medicamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin">
+    
+    <ion-list-header lines="full">
+      <ion-title> 
+        <ion-label>{{medicine.name}}</ion-label>
+      </ion-title>
+    </ion-list-header>
+
+      <ion-item>
+        <ion-label position="stacked">Cantidad de medicamento a consumir: {{medicine.cant}} </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Rango de tiempo a consumir el medicamento: </ion-label>
+        <hr>
+        <label *ngIf="medicine.rangeWeek"> {{medicine.rangeWeek}} Semana <hr></label>
+        <label *ngIf="medicine.rangeDay"> {{medicine.rangeDay}} Dia <hr></label>
+        <label *ngIf="medicine.rangeHour"> {{medicine.rangeHour}} Hora <hr></label>
+        <label *ngIf="medicine.rangeMinute"> {{medicine.rangeMinute}} Minuto <hr></label>
+        <label *ngIf="medicine.rangeSecond"> {{medicine.rangeSecond}} Segundo <hr></label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Alarmas a tomar el mediamento: </ion-label>
+        <hr>
+        <label *ngIf="medicine.alarms.length "> asdasd <hr></label>
+        <label *ngIf="!medicine.alarms.length "> Aun no se registraron alarmas. <hr></label>
+      </ion-item>
+    
+  </ion-list>
+</ion-content>
