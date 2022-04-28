@@ -173,11 +173,28 @@ export class MedicineService {
   ];
 
   actualMedicine = new Medicine();
+  medicinesByIdPrescription: Medicine[] = [];
 
-  constructor() { }
+  constructor() { 
+  }
 
-  getMedicinesByIdPrescription(){
-    // return this.prescriptions;
+  getMedicinesByIdPrescription(idPrescription:number){
+    this.medicinesByIdPrescription=[];
+    for (let index = 0; index < this.medicines.length; index++) {
+      if(this.medicines[index].idPrescription == idPrescription){
+        console.log(this.medicines[index])
+        this.medicinesByIdPrescription.push(this.medicines[index]);
+      }
+      // const element = array[index];
+      
+    }
+    // this.medicines.map(e=> {
+    //   if(e.id == idPrescription){
+    //     this.medicinesByIdPrescription.push(e);
+    //   }
+    // });
+    console.log(this.medicinesByIdPrescription);
+    return this.medicinesByIdPrescription;
   }
 
   getMedicine(id) {
